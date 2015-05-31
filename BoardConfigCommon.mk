@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-COMMON_PATH := device/xiaomi/msm8960-common
+LOCAL_PATH := device/xiaomi/msm8960-common
 
 TARGET_NO_RADIOIMAGE := true
 TARGET_NO_BOOTLOADER := true
@@ -74,7 +74,7 @@ QCOM_FM_ENABLED := true
 BOARD_HAVE_QCOM_FM := true
 AUDIO_FEATURE_ENABLED_FM := true
 
-BOARD_EGL_CFG := $(COMMON_PATH)/rootdir/etc/egl.cfg
+BOARD_EGL_CFG := $(LOCAL_PATH)/rootdir/etc/egl.cfg
 
 TARGET_USES_QCOM_BSP        := true
 
@@ -128,7 +128,7 @@ ENABLE_WEBGL            := true
 TARGET_FORCE_CPU_UPLOAD := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB            := $(COMMON_PATH)/rootdir/ramdisk/fstab.qcom
+TARGET_RECOVERY_FSTAB            := $(LOCAL_PATH)/rootdir/ramdisk/fstab.qcom
 RECOVERY_FSTAB_VERSION           := 2
 TARGET_RECOVERY_PIXEL_FORMAT     := "RGBX_8888"
 BOARD_HAS_NO_SELECT_BUTTON       := true
