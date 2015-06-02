@@ -189,9 +189,6 @@ on boot
     write /proc/sys/net/ipv6/conf/rmnet_usb2/accept_ra 2
     write /proc/sys/net/ipv6/conf/rmnet_usb3/accept_ra 2
 
-    write /sys/module/subsystem_restart/parameters/restart_level 3
-    write /sys/module/subsystem_restart/parameters/enable_ramdumps 1
-
     # To prevent out of order acknowledgements from making
     # connection tracking to treat them as not belonging to
     # the connection they belong to.
@@ -283,10 +280,6 @@ on post-fs-data
     mkdir /data/system 0775 system system
     #symlink /data/misc/wifi/wpa_supplicant /data/system/wpa_supplicant
     exec /system/bin/rm /data/system/wpa_supplicant
-
-    #Create directories for wiper services
-    mkdir /data/wpstiles/ 0755 shell
-    mkdir /data/wiper 0755 gps qcom_oncrpc
 
     #Create directories for gpsone_daemon services
     mkdir /data/misc/gpsone_d 0770 system gps
@@ -391,6 +384,9 @@ service usbhub_init /system/bin/usbhub_init
 on property:init.svc.surfaceflinger=stopped
     stop ppd
     stop hdmid
+
+on property:radio.atfwd.start=false
+    stop atfwd
 
 # corefile limit and ETB enabling
 on property:persist.debug.trace=1
