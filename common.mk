@@ -77,7 +77,7 @@ PRODUCT_COPY_FILES += \
 
 # bootanimation
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/bootanimation.zip:system/media/bootanimation.zip
+    $(LOCAL_PATH)/media/bootanimation.zip:system/media/bootanimation.zip
 
 # Prebuilt kl and kcm keymaps
 PRODUCT_COPY_FILES += \
