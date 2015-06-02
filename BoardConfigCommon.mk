@@ -19,14 +19,14 @@ LOCAL_PATH := device/xiaomi/msm8960-common
 TARGET_NO_RADIOIMAGE := true
 TARGET_NO_BOOTLOADER := true
 
-QCOM_BOARD_PLATFORMS                         := msm8960
-TARGET_BOARD_PLATFORM                          := msm8960
-TARGET_BOOTLOADER_BOARD_NAME      := MSM8960
+QCOM_BOARD_PLATFORMS         := msm8960
+TARGET_BOARD_PLATFORM        := msm8960
+TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 
 # Flags
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp -DQCOM_HARDWARE
+TARGET_GLOBAL_CFLAGS   += -mfpu=neon -mfloat-abi=softfp -DQCOM_HARDWARE
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp -DQCOM_HARDWARE
-COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
+COMMON_GLOBAL_CFLAGS   += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
 
 # Architecture
 TARGET_ARCH_VARIANT_CPU    := cortex-a9
@@ -41,17 +41,17 @@ BOARD_USES_QCOM_HARDWARE   := true
 
 # Krait optimizations
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
-TARGET_USE_KRAIT_PLD_SET             := true
-TARGET_KRAIT_BIONIC_PLDOFFS          := 10
-TARGET_KRAIT_BIONIC_PLDTHRESH        := 10
-TARGET_KRAIT_BIONIC_BBTHRESH         := 64
-TARGET_KRAIT_BIONIC_PLDSIZE          := 64
+TARGET_USE_KRAIT_PLD_SET            := true
+TARGET_KRAIT_BIONIC_PLDOFFS         := 10
+TARGET_KRAIT_BIONIC_PLDTHRESH       := 10
+TARGET_KRAIT_BIONIC_BBTHRESH        := 64
+TARGET_KRAIT_BIONIC_PLDSIZE         := 64
 
-BOARD_KERNEL_BASE    := 0x80200000
+BOARD_KERNEL_BASE     := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_RAMDISK_OFFSET := 0x02000000
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
-BOARD_KERNEL_CMDLINE   := console=null androidboot.hardware=qcom ehci-hcd.park=3 maxcpus=2 androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
+BOARD_RAMDISK_OFFSET  := 0x02000000
+BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x02000000
+BOARD_KERNEL_CMDLINE  := console=null androidboot.hardware=qcom ehci-hcd.park=3 maxcpus=2 androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
 
 TARGET_PREBUILT_KERNEL :=
 
@@ -70,46 +70,46 @@ WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
 
 # FM
-COMMON_GLOBAL_CFLAGS += -DQCOM_FM_ENABLED
-QCOM_FM_ENABLED := true
-BOARD_HAVE_QCOM_FM := true
+COMMON_GLOBAL_CFLAGS     += -DQCOM_FM_ENABLED
+QCOM_FM_ENABLED          := true
+BOARD_HAVE_QCOM_FM       := true
 AUDIO_FEATURE_ENABLED_FM := true
 
 BOARD_EGL_CFG := $(LOCAL_PATH)/configs/egl.cfg
 
-TARGET_USES_QCOM_BSP        := true
+TARGET_USES_QCOM_BSP := true
 
 # QCOM enhanced A/V
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
 # Display
-TARGET_USES_ION             := true
-USE_OPENGL_RENDERER         := true
-TARGET_USES_C2D_COMPOSITION := true
+TARGET_USES_ION                 := true
+USE_OPENGL_RENDERER             := true
+TARGET_USES_C2D_COMPOSITION     := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
 # Audio
-BOARD_USES_ALSA_AUDIO                   := true
-TARGET_USES_QCOM_MM_AUDIO               := true
-TARGET_USES_QCOM_COMPRESSED_AUDIO       := true
-BOARD_USES_LEGACY_ALSA_AUDIO            := true
-QCOM_ANC_HEADSET_ENABLED := true
-QCOM_FLUENCE_ENABLED := false
-TUNNEL_MODE_SUPPORTS_AMRWB              := true
-USE_TUNNEL_MODE                         := true
-QCOM_TUNNEL_LPA_ENABLED := true
-QCOM_PROXY_DEVICE_ENABLED := true
-QCOM_ACDB_ENABLED := true
-QCOM_AUDIO_FORMAT_ENABLED := true
-QCOM_CSDCLIENT_ENABLED := true
-AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
-AUDIO_FEATURE_ENABLED_AUXPCM_BT := false
+BOARD_USES_ALSA_AUDIO               := true
+TARGET_USES_QCOM_MM_AUDIO           := true
+TARGET_USES_QCOM_COMPRESSED_AUDIO   := true
+BOARD_USES_LEGACY_ALSA_AUDIO        := true
+QCOM_ANC_HEADSET_ENABLED            := true
+QCOM_FLUENCE_ENABLED                := false
+TUNNEL_MODE_SUPPORTS_AMRWB          := true
+USE_TUNNEL_MODE                     := true
+QCOM_TUNNEL_LPA_ENABLED             := true
+QCOM_PROXY_DEVICE_ENABLED           := true
+QCOM_ACDB_ENABLED                   := true
+QCOM_AUDIO_FORMAT_ENABLED           := true
+QCOM_CSDCLIENT_ENABLED              := true
+AUDIO_FEATURE_ENABLED_PROXY_DEVICE  := true
+AUDIO_FEATURE_ENABLED_AUXPCM_BT     := false
 AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := true
-AUDIO_FEATURE_ENABLED_EXTN_FORMATS := true
-QCOM_OUTPUT_FLAGS_ENABLED := true
-QCOM_USBAUDIO_ENABLED := true
-QCOM_FLUENCE_ENABLED := true
-QCOM_MULTI_VOICE_SESSION_ENABLED := true
+AUDIO_FEATURE_ENABLED_EXTN_FORMATS  := true
+QCOM_OUTPUT_FLAGS_ENABLED           := true
+QCOM_USBAUDIO_ENABLED               := true
+QCOM_FLUENCE_ENABLED                := true
+QCOM_MULTI_VOICE_SESSION_ENABLED    := true
 # GPS
 #The below will be needed if we ever want to build GPS HAL from source
 #TARGET_PROVIDES_GPS_LOC_API := true
@@ -117,12 +117,12 @@ QCOM_MULTI_VOICE_SESSION_ENABLED := true
 #TARGET_NO_RPC := true
 
 # Camera
-COMMON_GLOBAL_CFLAGS       += -DQCOM_BSP
+COMMON_GLOBAL_CFLAGS += -DQCOM_BSP
 
 # Bluetooth
-BOARD_HAVE_BLUETOOTH                        := true
-BOARD_HAVE_BLUETOOTH_QCOM                   := true
-BLUETOOTH_HCI_USE_MCT                       := true
+BOARD_HAVE_BLUETOOTH       := true
+BOARD_HAVE_BLUETOOTH_QCOM  := true
+BLUETOOTH_HCI_USE_MCT      := true
 
 # Webkit
 ENABLE_WEBGL            := true
@@ -145,12 +145,12 @@ BOARD_FLASH_BLOCK_SIZE             := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
 BOARD_USES_SECURE_SERVICES := true
 
-USE_DEVICE_SPECIFIC_CAMERA:= true
-USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY:= true
+USE_DEVICE_SPECIFIC_CAMERA := true
+USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY := true
 
-HAVE_ADRENO_SOURCE:= false
+HAVE_ADRENO_SOURCE := false
 
-SUPERUSER_EMBEDDED:= true
+SUPERUSER_EMBEDDED := true
 
 PRODUCT_BOOT_JARS += \
     qcom.fmradio \
