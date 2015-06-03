@@ -165,3 +165,12 @@ BOARD_USES_LEGACY_MMAP := true
 
 MALLOC_IMPL := dlmalloc
 TARGET_USES_LOGD := false
+
+# Enable dex-preoptimization to speed up first boot sequence
+ifeq ($(HOST_OS),linux)
+  ifeq ($(call match-word-in-list,$(TARGET_BUILD_VARIANT),user),true)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+    endif
+  endif
+endif
