@@ -23,13 +23,13 @@
     <bool name="config_animateScreenLights">false</bool>
 
     <!-- Default color for notification LED is white. -->
-    <color name="config_defaultNotificationColor">#00FF00</color>
+    <color name="config_defaultNotificationColor">#ff0000ff</color>
 
     <!-- Default LED on time for notification LED in milliseconds. -->
     <integer name="config_defaultNotificationLedOn">500</integer>
 
     <!-- Default LED off time for notification LED in milliseconds. -->
-    <integer name="config_defaultNotificationLedOff">4500</integer>
+    <integer name="config_defaultNotificationLedOff">2000</integer>
 
     <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
@@ -46,11 +46,10 @@
 
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
-        <item>5</item>
-        <item>70</item>
-        <item>250</item>
-        <item>900</item>
-        <item>2500</item>
+        <item>200</item>
+        <item>400</item>
+        <item>1000</item>
+        <item>5000</item>
         <item>10000</item>
     </integer-array>
 
@@ -59,12 +58,10 @@
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>6</item>
-        <item>20</item>
-        <item>40</item>
-        <item>60</item>
-        <item>90</item>
-        <item>150</item>
+        <item>35</item>
+        <item>55</item>
+        <item>70</item>
+        <item>100</item>
         <item>250</item>
     </integer-array>
 
@@ -87,22 +84,16 @@
         <item>0</item>
     </integer-array>
 
-    <!-- Minimum screen brightness setting allowed by the power manager.
-         The user is forbidden from setting the brightness below this level. -->
-    <integer name="config_screenBrightnessSettingMinimum">1</integer>
-
-    <!-- Maximum screen brightness allowed by the power manager.
-         The user is forbidden from setting the brightness above this level. -->
-    <integer name="config_screenBrightnessSettingMaximum">255</integer>
+    <!-- Minimum screen brightness allowed by the power manager. -->
+    <integer name="config_screenBrightnessDim">1</integer>
 
     <!-- Default screen brightness setting.
          Must be in the range specified by minimum and maximum. -->
-    <integer name="config_screenBrightnessSettingDefault">100</integer>
+    <integer name="config_screenBrightnessSettingDefault">102</integer>
 
-    <!-- Screen brightness used to dim the screen when the user activity
-         timeout expires.  May be less than the minimum allowed brightness setting
-         that can be set by the user. -->
-    <integer name="config_screenBrightnessDim">20</integer>
+    <!-- Minimum screen brightness setting allowed by the power manager.
+         The user is forbidden from setting the brightness below this level. -->
+    <integer name="config_screenBrightnessSettingMinimum">1</integer>
 
     <!-- The duration (in milliseconds) that the radio will scan for a signal
          when there's no network connection. If the scan doesn't timeout, use zero -->
@@ -130,14 +121,6 @@
            <item>"bt-pan"</item>
     </string-array>
 
-    <!-- Max number of scan filters supported by blutooth controller. 0 if the
-         device does not support hardware scan filters-->
-    <integer translatable="false" name="config_bluetooth_max_scan_filters">1</integer>
-
-    <!-- Max number of advertisers supported by bluetooth controller. 0 if the
-         device does not support multiple advertisement-->
-    <integer translatable="false" name="config_bluetooth_max_advertisers">4</integer>
-
     <!-- Array of allowable ConnectivityManager network types for tethering -->
     <!-- Common options are [1, 4] for TYPE_WIFI and TYPE_MOBILE_DUN or
          [0,1,5,7] for TYPE_MOBILE, TYPE_WIFI, TYPE_MOBILE_HIPRI and TYPE_BLUETOOTH -->
@@ -156,9 +139,6 @@
 
     <!-- Boolean indicating whether the wifi chipset has background scan support -->
     <bool translatable="false" name="config_wifi_background_scan_support">false</bool>
-
-    <!-- reference volume index for music stream to limit headphone volume and display warning -->
-    <integer name="config_safe_media_volume_index">7</integer>
 
     <!-- Setting this true forces the headset jack switches to use the/dev/input/event subsystem
                   rather than the uevent framework. -->
@@ -186,9 +166,7 @@
         <item>"mobile_fota,10,0,2,60000,true"</item>
         <item>"mobile_ims,11,0,2,60000,true"</item>
         <item>"mobile_cbs,12,0,2,60000,true"</item>
-        <item>"wifi_p2p,13,1,0,-1,true"</item>
         <item>"bluetooth,7,7,2,-1,true"</item>
-        <item>"mobile_ia,14,0,2,-1,true"</item>
         <item>"ethernet,9,9,9,-1,true"</item>
     </string-array>
 
@@ -209,27 +187,27 @@
     <bool translatable="false" name="skip_restoring_network_selection">true</bool>
 
     <!-- Set to true to add links to Cell Broadcast app from Settings and MMS app. -->
-    <bool name="config_cellBroadcastAppLinks">true</bool>
+    <bool name="config_cellBroadcastAppLinks">false</bool>
 
     <!-- Shutdown if the battery temperature exceeds (this value * 0.1) Celsius. -->
-    <integer name="config_shutdownBatteryTemperature">600</integer>
+    <integer name="config_shutdownBatteryTemperature">680</integer>
 
     <bool name="config_ui_enableFadingMarquee">false</bool>
 
-    <bool name="config_enableWifiDisplay">true</bool>
+    <bool name="config_enableWifiDisplay">false</bool>
 
     <!-- Minimum span needed to begin a touch scaling gesture.
          If the span is equal to or greater than this size, a scaling gesture
          will begin, where supported. (See android.view.ScaleGestureDetector)
 
-         This value has been tuned for the "mako" device. -->
-    <dimen name="config_minScalingSpan">35mm</dimen>
+         This value has been tuned for the "aries" device. -->
+    <dimen name="config_minScalingSpan">27.0mm</dimen>
 
     <!-- The default iface on which to monitor data use -->
-    <string name="config_datause_iface" translatable="false">rmnet_usb0</string>
+    <string name="config_datause_iface" translatable="false">rmnet0</string>
 
     <!-- Flag indicating if the speed up audio on mt call code should be executed -->
-    <bool name="config_speed_up_audio_on_mt_calls">true</bool>
+    <bool name="config_speed_up_audio_on_mt_calls">false</bool>
 
     <!-- Indicate whether to allow the device to suspend when the screen is off
          due to the proximity sensor.  This resource should only be set to true
@@ -238,8 +216,11 @@
          The default is false. -->
     <bool name="config_suspendWhenScreenOffDueToProximity">false</bool>
 
-        <!-- Enable lockscreen translucent decor -->
-    <bool name="config_enableLockScreenTranslucentDecor">true</bool>
+    <!-- MMS user agent string -->
+    <string name="config_mms_user_agent" translatable="false">Android-Mms/2.0</string>
+
+    <!-- MMS user agent prolfile url -->
+    <string name="config_mms_user_agent_profile_url" translatable="false">http://www.google.com/oha/rdf/ua-profile-kila.xml</string>
 
     <string-array name="config_locationProviderPackageNames" translatable="false">
         <!-- The Google provider -->
@@ -248,28 +229,10 @@
         <item>com.android.location.fused</item>
     </string-array>
 
-    <!-- Configuration to sending and receiving Mms when mobile data is disable.-->
-    <bool name="config_enable_mms_with_mobile_data_off">true</bool>
-
-    <!-- Configuartion to support 7bit Ascii encoding and decoding
-         for long messages. -->
-    <bool name="config_ascii_7bit_support_for_long_message">true</bool>
-
     <!--  Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">4</integer>
-
     <!--  Whether Multiuser UI should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
-
-    <!-- Configure mobile tcp buffer sizes in the form:
-         rat-name:rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max
-         If no value is found for the rat-name in use, the system default will be applied.
-    -->
-    <string-array name="config_mobile_tcp_buffers">
-        <item>hsdpa:4094,87380,704512,4096,16384,110208</item>
-        <item>hspa:4094,87380,704512,4096,16384,110208</item>
-        <item>hsupa:4094,87380,704512,4096,16384,110208</item>
-    </string-array>
 
     <string-array translatable="false" name="config_globalActionsList">
         <item>power</item>

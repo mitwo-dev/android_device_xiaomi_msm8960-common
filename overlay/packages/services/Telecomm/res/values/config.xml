@@ -18,7 +18,7 @@
      for different hardware or product builds. -->
 <resources>
     <!-- Flag indicating if the tty is enabled -->
-    <bool name="tty_enabled">false</bool>
+    <bool name="tty_enabled">true</bool>
     <!-- Allow emergency numbers to be logged in call log -->
     <bool name="allow_emergency_numbers_in_call_log">true</bool>
 </resources>
