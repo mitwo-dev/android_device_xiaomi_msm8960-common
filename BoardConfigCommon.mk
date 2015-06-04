@@ -29,7 +29,6 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp -DQCOM_HARDWARE
 COMMON_GLOBAL_CFLAGS   += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
 
 # Architecture
-TARGET_ARCH_VARIANT_CPU    := cortex-a9
 TARGET_CPU_ABI             := armeabi-v7a
 TARGET_CPU_ABI2            := armeabi
 TARGET_CPU_SMP             := true
@@ -143,7 +142,6 @@ BOARD_FLASH_BLOCK_SIZE             := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_USES_SECURE_SERVICES := true
 
 USE_DEVICE_SPECIFIC_CAMERA := true
-USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY := true
 
 HAVE_ADRENO_SOURCE := false
 
@@ -158,7 +156,6 @@ PRODUCT_BOOT_JARS += \
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
 
-BOARD_USES_LEGACY_MMAP := true
 
 MALLOC_IMPL := dlmalloc
 TARGET_USES_LOGD := false
