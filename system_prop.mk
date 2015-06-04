@@ -66,8 +66,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.egl.hw=1 \
     debug.composition.type=dyn \
     persist.hwc.mdpcomp.enable=true \
-    debug.mdpcomp.logs=0 \
-    ro.sf.lcd_density=320
+    debug.mdpcomp.logs=0
 
 # Power Profile
 PRODUCT_PROPERTY_OVERRIDES += \
