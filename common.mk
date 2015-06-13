@@ -75,9 +75,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine-8064ab.conf:system/etc/thermal-engine-8064ab.conf \
     $(LOCAL_PATH)/configs/thermal-engine-8960.conf:system/etc/thermal-engine-8960.conf
 
+ifndef CM_BUILD
 # bootanimation
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/bootanimation.zip:system/media/bootanimation.zip
+endif
 
 # Prebuilt kl and kcm keymaps
 PRODUCT_COPY_FILES += \
@@ -276,6 +278,20 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/FadeOut.ogg:system/media/audio/notifications/FadeOut.ogg \
     $(LOCAL_PATH)/media/GoodMorning.ogg:system/media/audio/alarms/GoodMorning.ogg \
     $(LOCAL_PATH)/media/MI.ogg:system/media/audio/ringtones/MI.ogg
+
+ifdef CM_BUILD
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-cm
+
+# Media
+PRODUCT_COPY_FILES += \
+	frameworks/av/media/libstagefright/data/media_codecs_ffmpeg.xml:system/etc/media_codecs_ffmpeg.xml \
+    $(LOCAL_PATH)/configs/media_codecs_cm.xml:system/etc/media_codecs_xiaomi_extra.xml
+else
+# Media
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/media_codecs_caf.xml:system/etc/media_codecs_xiaomi_extra.xml
+endif
 
 # This is the aries-specific audio package
 $(call inherit-product, frameworks/base/data/sounds/AudioPackage10.mk)

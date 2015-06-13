@@ -159,3 +159,12 @@ ifeq ($(HOST_OS),linux)
     endif
   endif
 endif
+
+ifdef CM_BUILD
+# Try to build the kernel
+TARGET_KERNEL_SOURCE := kernel/xiaomi/aries
+TARGET_KERNEL_CONFIG := aries-perf_defconfig
+
+# Use CM PowerHAL by default
+TARGET_POWERHAL_VARIANT := cm
+endif

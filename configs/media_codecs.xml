@@ -227,4 +227,5 @@
         <!-- DOLBY_UDC END -->
     </Decoders>
     <Include href="media_codecs_google_video.xml" />
+    <Include href="media_codecs_xiaomi_extra.xml" />
 </MediaCodecs>
