@@ -238,6 +238,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     qrngd
 
+# Power
+PRODUCT_PACKAGES += \
+    power.msm8960
+
 PRODUCT_PACKAGES += \
     libwpa_client \
     hostapd \
