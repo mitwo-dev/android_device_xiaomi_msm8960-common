@@ -1,0 +1,6 @@
+/sbin/syspart_select               u:object_r:syspart_select_exec:s0
+
+/dev/audience_es310                u:object_r:audio_device:s0
+/dev/ttyHS2                        u:object_r:audio_device:s0
+
+/system/bin/btnvtool               u:object_r:btnvtool_exec:s0

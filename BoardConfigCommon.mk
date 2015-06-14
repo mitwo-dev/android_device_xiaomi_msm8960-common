@@ -133,6 +133,16 @@ TARGET_FORCE_CPU_UPLOAD := true
 # Recovery
 TARGET_RECOVERY_FSTAB            := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 
+# SELinux
+-include device/qcom/sepolicy/sepolicy.mk
+
+BOARD_SEPOLICY_DIRS += \
+    device/xiaomi/msm8960-common/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+       btnvtool.te \
+       syspart_select.te
+
 BOARD_USES_SECURE_SERVICES := true
 
 SUPERUSER_EMBEDDED := true

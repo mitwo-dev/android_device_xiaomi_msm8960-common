@@ -1,0 +1,7 @@
+type btnvtool, domain;
+type btnvtool_exec, exec_type, file_type;
+
+# Started by init
+init_daemon_domain(btnvtool)
+
+allow btnvtool self:process execmem;

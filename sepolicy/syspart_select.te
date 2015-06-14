@@ -1,0 +1,5 @@
+type syspart_select, domain;
+type syspart_select_exec, exec_type, file_type;
+
+allow syspart_select block_device:blk_file { create unlink };
+allow syspart_select device:blk_file create;
