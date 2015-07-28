@@ -264,6 +264,10 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     ueventd.qcom.rc
 
+# Recovery ramdisk
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/twrp.fstab:recovery/root/etc/twrp.fstab
+
 # Init scripts in /etc
 PRODUCT_PACKAGES += \
     init.qcom.post_boot.sh \
