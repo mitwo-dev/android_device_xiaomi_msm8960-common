@@ -293,7 +293,6 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-cm
 
 # Media
 PRODUCT_COPY_FILES += \
-	frameworks/av/media/libstagefright/data/media_codecs_ffmpeg.xml:system/etc/media_codecs_ffmpeg.xml \
     $(LOCAL_PATH)/configs/media_codecs_cm.xml:system/etc/media_codecs_xiaomi_extra.xml
 else
 # Media
