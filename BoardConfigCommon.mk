@@ -133,6 +133,9 @@ TARGET_FORCE_CPU_UPLOAD := true
 # Recovery
 TARGET_RECOVERY_FSTAB            := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 
+# Lights HAL
+TARGET_PROVIDES_LIBLIGHT := true
+
 # SELinux
 -include device/qcom/sepolicy/sepolicy.mk
 
